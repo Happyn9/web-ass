@@ -11,7 +11,7 @@ export default function History() {
 
   useEffect(() => {
     const added = JSON.parse(localStorage.getItem("wb_added_txns") || "[]");
-    setTransactions(added.reverse()); // afficher du plus récent au plus ancien
+    setTransactions(added.reverse()); 
   }, []);
 
   const handleLogout = () => {
@@ -49,13 +49,13 @@ export default function History() {
         {/* Desktop menu */}
 
         <nav className="hidden md:flex gap-6 text-blue-400 font-medium">
-          <a href="/dashboard" className="hover:text-yellow-600">
+          <span onClick={()=>navigate('/dashboard')} className="hover:text-yellow-600">
             Dashboard
-          </a>
-          <a href="/transactions" className="hover:text-yellow-600">
+          </span>
+          <span onClick={()=>navigate('/transactions')}  className="hover:text-yellow-600">
             Transactions
-          </a>
-          <a href="/history" className="text-indigo-400 font-semibold">
+          </span>
+          <a onClick={()=> navigate('history')} className="text-indigo-400 font-semibold">
             History
           </a>
           <button
@@ -70,15 +70,15 @@ export default function History() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="bg-blue-800 text-white flex flex-col md:hidden text-center py-4 space-y-3">
-          <a href="/dashboard" onClick={() => setMenuOpen(false)} className="hover:text-yellow-300">
+          <span onClick={() => {setMenuOpen(false); navigate('/dashboard')}} className="hover:text-yellow-300">
             Dashboard
-          </a>
-          <a href="/transactions" onClick={() => setMenuOpen(false)} className="hover:text-yellow-300">
+          </span>
+          <span  onClick={() => {setMenuOpen(false);navigate('/transactions')}} className="hover:text-yellow-300">
             Transactions
-          </a>
-          <a href="/history" onClick={() => setMenuOpen(false)} className="text-yellow-300 font-semibold">
+          </span>
+          <span onClick={() => {setMenuOpen(false) ;navigate('/history')}} className="text-yellow-300 font-semibold">
             History
-          </a>
+          </span>
           <button
             onClick={() => {
               setMenuOpen(false);

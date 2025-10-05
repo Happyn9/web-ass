@@ -122,24 +122,23 @@ export default function Transactions() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex gap-6 font-medium">
-          <a
-            href="/dashboard"
+          <span onClick={()=>navigate('/dashboard')}
             className="hover:text-indigo-400 transition-colors duration-200"
           >
             Dashboard
-          </a>
-          <a
-            href="/transactions"
+          </span>
+          <span
+            onClick={()=>navigate("/transactions")}
             className="text-indigo-400 font-semibold hover:text-blue-400 transition-colors duration-200"
           >
             Transactions
-          </a>
-          <a
-            href="/history"
+          </span>
+          <span
+            onClick={()=>navigate("/history")}
             className="hover:text-indigo-400 transition-colors duration-200"
           >
             History
-          </a>
+          </span>
           <button
             onClick={handleLogout}
             className="hover:text-red-400 cursor-pointer transition-colors duration-200"
@@ -149,33 +148,34 @@ export default function Transactions() {
         </nav>
       </header>
 
-      {/* Mobile Menu m */}
+      {/* Mobile Menu */}
       <div
         className={`md:hidden bg-blue-700 text-white overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-64 py-4" : "max-h-0"
         }`}
       >
         <nav className="flex flex-col gap-3 text-center">
-          <a
-            href="/dashboard"
-            onClick={() => setMenuOpen(false)}
+          <span
+            
+            onClick={() => {setMenuOpen(false); navigate('/dashboard')}}
             className="hover:text-yellow-300 transition-colors duration-200"
           >
             Dashboard
-          </a>
-          <a
-            href="/transactions"
-            onClick={() => setMenuOpen(false)}
+          </span>
+          <span
+            
+            onClick={() => {setMenuOpen(false);navigate("/transactions")}}
             className="font-semibold hover:text-yellow-300 transition-colors duration-200"
           >
             Transactions
-          </a>
-          <a
-            href="/history"
+          </span>
+          <span
+            onClick={() => {setMenuOpen(false);navigate("/history")}}
+           
             className="hover:text-yellow-300 transition-colors duration-200"
           >
             History
-          </a>
+          </span>
           <button
             onClick={() => {
               setMenuOpen(false);
