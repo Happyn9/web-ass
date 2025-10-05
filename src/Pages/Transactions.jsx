@@ -149,7 +149,7 @@ export default function Transactions() {
         </nav>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu m */}
       <div
         className={`md:hidden bg-blue-700 text-white overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-64 py-4" : "max-h-0"
